@@ -1,0 +1,19 @@
+def promedio_de_notas(nota1, nota2):
+    # Calcula el promedio de las dos notas
+    promedio = (nota1 + nota2) / 2
+    return promedio
+
+def main():
+    # Datos de ejemplo: puedes cambiar estos valores
+    nota1 = 85
+    nota2 = 90
+    
+    # Llamada al método para obtener el promedio
+    resultado = promedio_de_notas(nota1, nota2)
+    
+    # Mostrar el resultado en consola
+    print("El promedio de las notas es:", resultado)
+
+# Ejecutar la función main
+if __name__ == "__main__":
+    main()
