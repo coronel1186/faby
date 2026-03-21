@@ -1,0 +1,35 @@
+# Definición de la función (tal como la proporcionaste)
+def calcular_promedio_notas(nota1, nota2, nota3):
+  """
+  Calcula el promedio de tres notas.
+
+  Args:
+    nota1: La primera nota.
+    nota2: La segunda nota.
+    nota3: La tercera nota.
+
+  Returns:
+    El promedio calculado de las tres notas.
+  """
+  suma_notas = nota1 + nota2 + nota3
+  promedio = suma_notas / 3
+  return promedio
+
+# --- Programa principal ---
+
+# Asignamos valores específicos a las notas
+# Puedes cambiar estos valores para probar diferentes escenarios
+primera_nota = 8.5
+segunda_nota = 9.0
+tercera_nota = 7.5
+
+# Llamamos a la función con los valores asignados
+promedio_obtenido = calcular_promedio_notas(primera_nota, segunda_nota, tercera_nota)
+
+# Mostramos el resultado en pantalla
+print("--- Cálculo de Promedio ---")
+print(f"Nota 1: {primera_nota}")
+print(f"Nota 2: {segunda_nota}")
+print(f"Nota 3: {tercera_nota}")
+print("-" * 25) # Línea separadora para mejorar la legibilidad
+print(f"El promedio calculado es: {promedio_obtenido:.2f}") # Se muestra el promedio con 2 decimales
