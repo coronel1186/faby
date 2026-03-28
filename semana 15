@@ -1,0 +1,87 @@
+# -*- coding: utf-8 -*-
+
+def gestionar_estudiantes():
+    """
+    Función principal que gestiona la lista de estudiantes.
+    Permite agregar, mostrar, buscar y eliminar estudiantes.
+    """
+    estudiantes = []  # Creación de una lista para almacenar los nombres de los estudiantes
+
+    while True:
+        print("\n--- Menú de Gestión de Estudiantes ---")
+        print("1. Agregar estudiante")
+        print("2. Mostrar todos los estudiantes")
+        print("3. Buscar estudiante")
+        print("4. Eliminar estudiante")
+        print("5. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == '1':
+            nombre = input("Ingrese el nombre del estudiante a agregar: ")
+            if nombre:  # Asegurarse de que el nombre no esté vacío
+                estudiantes.append(nombre)  # Agregar datos a la lista
+                print(f"'{nombre}' ha sido agregado a la lista.")
+            else:
+                print("El nombre no puede estar vacío.")
+
+        elif opcion == '2':
+            mostrar_estudiantes(estudiantes)  # Mostrar la información almacenada
+
+        elif opcion == '3':
+            if not estudiantes:
+                print("No hay estudiantes registrados para buscar.")
+            else:
+                buscar_estudiante(estudiantes)  # Buscar un elemento
+
+        elif opcion == '4':
+            if not estudiantes:
+                print("No hay estudiantes registrados para eliminar.")
+            else:
+                eliminar_estudiante(estudiantes)  # Eliminar un elemento
+
+        elif opcion == '5':
+            print("Saliendo del programa. ¡Hasta luego!")
+            break
+
+        else:
+            print("Opción no válida. Por favor, intente de nuevo.")
+
+def mostrar_estudiantes(lista_estudiantes):
+    """
+    Muestra todos los estudiantes registrados en la lista.
+    """
+    if not lista_estudiantes:
+        print("La lista de estudiantes está vacía.")
+    else:
+        print("\n--- Lista de Estudiantes ---")
+        # Recorrer elementos de la lista
+        for i, estudiante in enumerate(lista_estudiantes):
+            print(f"{i + 1}. {estudiante}")
+        print("---------------------------")
+
+def buscar_estudiante(lista_estudiantes):
+    """
+    Busca un estudiante específico en la lista.
+    """
+    nombre_buscar = input("Ingrese el nombre del estudiante a buscar: ")
+    if nombre_buscar in lista_estudiantes:
+        indice = lista_estudiantes.index(nombre_buscar)
+        print(f"'{nombre_buscar}' se encuentra en la posición {indice + 1}.")
+    else:
+        print(f"'{nombre_buscar}' no se encuentra en la lista.")
+
+def eliminar_estudiante(lista_estudiantes):
+    """
+    Elimina un estudiante específico de la lista.
+    """
+    nombre_eliminar = input("Ingrese el nombre del estudiante a eliminar: ")
+    if nombre_eliminar in lista_estudiantes:
+        lista_estudiantes.remove(nombre_eliminar)
+        print(f"'{nombre_eliminar}' ha sido eliminado de la lista.")
+    else:
+        print(f"'{nombre_eliminar}' no se encuentra en la lista.")
+
+# Ejecutar la función principal del programa
+if __name__ == "__main__":
+    gestionar_estudiantes()
